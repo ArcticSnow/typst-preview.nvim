@@ -17,12 +17,12 @@ local function spawn(path, host, port, mode, callback)
       or (utils.get_data_path() .. fetch.get_tinymist_bin_name())
   local args = {
     'preview',
+    '--partial-rendering',
+    tostring(config.opts.partial_rendering),
     '--invert-colors',
     config.opts.invert_colors,
     '--preview-mode',
     mode,
-    '--partial-rendering',
-    tostring(config.opts.partial_rendering),
     '--no-open',
     '--data-plane-host',
     host .. ':0',
