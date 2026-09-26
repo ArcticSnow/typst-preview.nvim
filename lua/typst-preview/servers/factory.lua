@@ -20,6 +20,7 @@ local function spawn(path, host, port, mode, callback)
     '--invert-colors',
     config.opts.invert_colors,
     '--preview-mode',
+    tostring(config.opts.partial_rendering),
     mode,
     '--no-open',
     '--data-plane-host',
