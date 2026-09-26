@@ -15,7 +15,7 @@ local function spawn(path, host, port, mode, callback)
   local server_stderr = assert(vim.uv.new_pipe())
   local tinymist_bin = config.opts.dependencies_bin['tinymist']
       or (utils.get_data_path() .. fetch.get_tinymist_bin_name())
-  local args = {
+local args = {
     'preview',
     '--partial-rendering',
     tostring(config.opts.partial_rendering),
@@ -33,8 +33,6 @@ local function spawn(path, host, port, mode, callback)
     '--root',
     config.opts.get_root(path),
   }
-
-
 
   if config.opts.extra_args ~= nil then
     local extra = config.opts.extra_args
